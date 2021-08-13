@@ -15,8 +15,8 @@ const PromotionCard = ({ promotion }) => {
                         <div className="promotion-card__first-comment"> "{promotion.comments[0].comment}" </div>
                     )}
 
-                    <div className="promotion-card__comments-count">{promotion.comments.length} Comentário{promotion.comments.length == 1 ? "" : "s"}</div>
-                    <a href={promotion.url} target='_blank' className="promotion-card__link">IR PARA O SITE</a>
+                    <div className="promotion-card__comments-count">{promotion.comments.length} Comentário{promotion.comments.length === 1 ? "" : "s"}</div>
+                    <a href={promotion.url} target='_blank' rel="noreferrer noopener" className="promotion-card__link">IR PARA O SITE</a>
                 </footer>
             </div>
         </div>
