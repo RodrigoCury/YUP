@@ -19,3 +19,12 @@
     padding: 0 10px;
 }
 
+
+.promotion-form__group button{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #aaa;
+    height: 36px;
+    padding: 10px;
+}
+
