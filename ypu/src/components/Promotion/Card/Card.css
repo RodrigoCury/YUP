@@ -4,6 +4,7 @@
     box-shadow: 0 2px 7px 0 #00000025;
     display: flex;
     padding: 15px;
+    margin: 15px auto;
     align-items: center;
 }
 
@@ -29,6 +30,7 @@
 .promotion-card__first-comment {
     color: #95a5a6;
     font-weight: 700;
+    max-width: 400px;
 }
 
 .promotion-card__footer {
