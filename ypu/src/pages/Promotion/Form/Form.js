@@ -1,15 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import PromotionForm from "components/Promotion/Form/Form";
+import UIContainer from "components/UI/Container/Container";
 
 const PagesPromotionForm = () => {
 
     const { id } = useParams();
 
     return (
-        <form>
-            <input type='text' placeholder={`Pesquisar ${id}`} />
-            <button type='submit' onClick={(event) => { event.preventDefault() }}>Pesquisar</button>
-        </form>
+        <UIContainer>
+            <PromotionForm />
+        </UIContainer>
     )
 }
 
