@@ -16,9 +16,12 @@ const PromotionSearch = () => {
             _sort: "id",
             title_like: search || undefined,
         },
+        debounceDelay: search ? 300 : 0,
     })
 
-    useEffect(load, [search])
+    useEffect(() => {
+        load()
+    }, [search])
 
     return (
         <div className='promotion-search'>
