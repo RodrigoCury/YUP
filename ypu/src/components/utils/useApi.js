@@ -29,7 +29,7 @@ export default function useApi(config) {
         const fn = localConfig.debounced ? debouncedAxios : axios
 
         try {
-            response = await debouncedAxios(finalConfig);
+            response = await fn(finalConfig);
 
             setRequestInfo({
                 ...initialRequestInfo,
