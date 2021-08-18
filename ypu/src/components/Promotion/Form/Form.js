@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
-import axios from 'axios'
 import './Form.css'
+import useApi from "components/utils/useApi"
 
 const initialValues = {
     title: "",
@@ -11,20 +11,38 @@ const initialValues = {
 }
 
 const PromotionForm = ({ id }) => {
-
     const [values, setValues] = useState(id ? null : initialValues)
+
+    // Load Values from Server
+    const [load, loadInfo] = useApi({
+        url: `promotions/${id}`,
+        method: "get",
+        onCompleted: (response) => !response.error && setValues(response.data),
+    })
+
+    // Save Values on Server
+    const [save, saveInfo] = useApi({
+        url: id
+            ? `promotions/${id}`
+            : `promotions`,
+        method: id
+            ? "put"
+            : "post",
+        onCompleted: (response) => !response.error && history.push('/')
+    })
+
+    // Delete Values from Server
+    const [del, delInfo] = useApi({
+        url: `promotions/${id}`,
+        method: "delete",
+        onCompleted: (response) => !response.error && history.push('/')
+    })
+
     const history = useHistory()
 
     useEffect(() => {
         if (id) {
-            axios.get(`http://localhost:3340/promotions/${id}`)
-                .then(response => {
-                    if (response.status >= 400) {
-                        throw new Error("Id Não Encontrado")
-                    }
-                    setValues(response.data)
-                })
-                .catch(error => console.error(error))
+            load()
         }
     }, [])
 
@@ -38,25 +56,14 @@ const PromotionForm = ({ id }) => {
 
     function onSubmit(event) {
         event.preventDefault()
-
-        const method = id
-            ? 'put'
-            : 'post'
-
-        const url = id
-            ? `http://localhost:3340/promotions/${id}`
-            : `http://localhost:3340/promotions`
-
-        axios[method](url, values)
-            .then(response => {
-                history.push('/')
-            })
+        save({
+            data: values,
+        })
     }
 
     function deletePromo(event) {
         event.preventDefault()
-
-        axios.delete(`http://localhost:3340/promotions/${id}`).then(() => history.push('/'))
+        del()
     }
 
     return (
@@ -65,27 +72,32 @@ const PromotionForm = ({ id }) => {
             <h2>{id ? "Editar Promoção" : "Nova promoção"}</h2>
 
             {!values
-                ? (<h2>Carregando...</h2>)
+                ? (
+                    !loadInfo.error
+                        ? (<h2>Carregando...</h2>)
+                        : (<h2>Houve Um Erro na Requisição do Item</h2>)
+                )
                 : (
                     <form onSubmit={onSubmit}>
+                        {saveInfo.loading && <span>Salvando Dados...</span>}
                         <div className="promotion-form__group">
                             <label htmlFor='title'>Titulo</label>
-                            <input id='title' name='title' type='text' onChange={onChange} value={values.title} />
+                            <input id='title' name='title' type='text' onChange={onChange} value={values?.title} />
                         </div>
 
                         <div className="promotion-form__group">
                             <label htmlFor='url'>Link</label>
-                            <input id='url' name='url' type='text' onChange={onChange} value={values.url} />
+                            <input id='url' name='url' type='text' onChange={onChange} value={values?.url} />
                         </div>
 
                         <div className="promotion-form__group">
                             <label htmlFor='imageUrl'>Imagem</label>
-                            <input id='imageUrl' name='imageUrl' type='text' onChange={onChange} value={values.imageUrl} />
+                            <input id='imageUrl' name='imageUrl' type='text' onChange={onChange} value={values?.imageUrl} />
                         </div>
 
                         <div className="promotion-form__group">
                             <label htmlFor='price'>Preço</label>
-                            <input id='price' name='price' type='number' onChange={onChange} value={values.price} />
+                            <input id='price' name='price' type='number' onChange={onChange} value={values?.price} />
                         </div>
 
                         <div className="promotion-form__group">
