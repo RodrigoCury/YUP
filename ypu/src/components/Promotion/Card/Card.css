@@ -50,4 +50,17 @@
     color: #3498DB;
     text-decoration: none;
     padding: 10px;
+    transition: 250ms;
+}
+
+.promotion-card__link:hover {
+    color: #FFF;
+    background-color: #3498DB;
+    border-color: #AAA;
+}
+
+.promotion-card__link:active {
+    color: #FFF;
+    background-color: #7db0d1;
+    border-color: #AAA;
 }
