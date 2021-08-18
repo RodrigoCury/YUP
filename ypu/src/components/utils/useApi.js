@@ -17,20 +17,27 @@ export default function useApi(config) {
             ...initialRequestInfo,
             loading: true,
         });
-        let response = null;
+
+        let response
+
+        const finalConfig = {
+            baseURL: 'http://localhost:3340',
+            ...config,
+            ...localConfig,
+        }
+
+        const fn = localConfig.debounced ? debouncedAxios : axios
+
         try {
-            response = await debouncedAxios({
-                baseURL: 'http://localhost:3340',
-                ...config,
-                ...localConfig,
-            });
+            response = await debouncedAxios(finalConfig);
+
             setRequestInfo({
                 ...initialRequestInfo,
                 data: response.data,
             });
         } catch (error) {
-            response = {};
-            response.error = error;
+            response = { error }
+
             setRequestInfo({
                 ...initialRequestInfo,
                 error,

@@ -17,7 +17,6 @@ const PromotionForm = ({ id }) => {
     const [load, loadInfo] = useApi({
         url: `promotions/${id}`,
         method: "get",
-        debounceDelay: 0,
         onCompleted: (response) => !response.error && setValues(response.data),
     })
 
@@ -43,8 +42,7 @@ const PromotionForm = ({ id }) => {
 
     useEffect(() => {
         if (id) {
-            load()
-            console.log(loadInfo);
+            load({ debounced: false, })
         }
     }, [])
 
@@ -60,12 +58,13 @@ const PromotionForm = ({ id }) => {
         event.preventDefault()
         save({
             data: values,
+            debounced: false,
         })
     }
 
     function deletePromo(event) {
         event.preventDefault()
-        del()
+        del({ debounced: false, })
     }
 
     return (
