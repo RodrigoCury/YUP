@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import PromotionCard from "../Card/Card"
 import './List.css'

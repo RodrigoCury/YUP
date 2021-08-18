@@ -10,6 +10,7 @@ const initialValues = {
     imageUrl: ""
 }
 
+// eslint-disable-next-line react/prop-types
 const PromotionForm = ({ id }) => {
     const [values, setValues] = useState(id ? null : initialValues)
 
@@ -32,7 +33,7 @@ const PromotionForm = ({ id }) => {
     })
 
     // Delete Values from Server
-    const [del, delInfo] = useApi({
+    const [del] = useApi({
         url: `promotions/${id}`,
         method: "delete",
         onCompleted: (response) => !response.error && history.push('/')
