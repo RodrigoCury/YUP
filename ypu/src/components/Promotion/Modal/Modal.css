@@ -1,0 +1,27 @@
+.promotion-modal__comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion-modal__comment-box {
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.promotion-modal__name-box {
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.promotion-modal__submit {
+    width: 50px;
+    align-self: center;
+    margin: 5px;
+    padding: 2px;
+}

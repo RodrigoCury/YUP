@@ -29,7 +29,10 @@
 .promotion-card__first-comment {
     color: #95a5a6;
     font-weight: 700;
-    max-width: 400px;
+    max-width: 330px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .promotion-card__footer {
@@ -42,6 +45,13 @@
     margin-left: auto;
     margin-right: 10px;
     color: #3498DB;
+    border: unset;
+    background: unset;
+    cursor: pointer;
+}
+
+.promotion-card__comments-count:hover {
+    color: #2a7aaf;
 }
 
 .promotion-card__link {
@@ -51,6 +61,7 @@
     text-decoration: none;
     padding: 10px;
     transition: 250ms;
+    margin-left: 5px;
 }
 
 .promotion-card__link:hover {

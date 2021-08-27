@@ -1,0 +1,58 @@
+.promotion-modal-comments-tree {
+    list-style: none;
+    padding: 0;
+}
+
+.promotion-modal-comments-tree__item {
+    display: flex;
+    margin: 20px 0;
+}
+
+.promotion-modal-comments-tree__item__info {
+    margin-top: 5px;
+    justify-content: space-around;
+}
+
+.promotion-modal-comments-tree__item__avatar {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin-right: 15px
+}
+
+.promotion-modal-comments-tree__item__username {
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+}
+
+.promotion-modal-comments-tree__item__comment {
+    color: rgb(116, 116, 116);
+    margin: 5px 0 5px 5px;
+}
+
+.promotion-modal-comments-tree__answer-button {
+    background-color: transparent;
+    border: none;
+    color: #3498DB;
+    padding: 0;
+    cursor: pointer;
+}
+
+.promotion-modal-comments-tree__comment-box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.promotion-modal-comments-tree__comment-box textarea {
+    min-width: 400px;
+}
+
+.promotion-modal-comments-tree__send-button {
+    margin-left: 15px;
+    border-radius: 4px;
+    border: 1px solid #3498DB;
+    color: #3498DB;
+    background: none;
+    height: 30px;
+}

@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
-import React from "react"
+import React, { useState } from "react"
 import PromotionCard from "../Card/Card"
+import PromotionModal from "../Modal/Modal"
 import './List.css'
 
 const PromotionList = ({ error, loading, promotions }) => {
+
+    const [promotionId, setPromotionId] = useState(null)
+
     if (error) {
         return <div>Algo de Errado, não está certo</div>
     }
@@ -18,7 +22,20 @@ const PromotionList = ({ error, loading, promotions }) => {
 
     return (
         <div className='promotion-list'>
-            {promotions.map(p => <PromotionCard promotion={p} key={p.id} />)}
+            {promotions.map(p => {
+                return <PromotionCard
+                    promotion={p}
+                    onClickComments={() => setPromotionId(p.id)}
+                    key={p.id}
+                />
+            })}
+
+            {promotionId && (
+                <PromotionModal
+                    promotionId={promotionId}
+                    onClickClose={() => setPromotionId(null)}
+                />
+            )}
         </div>
     )
 }
