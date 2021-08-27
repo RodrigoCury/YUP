@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react"
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import Field from 'components/Form/Field/Field'
+import { Formik, Form, } from "formik"
 import './Form.css'
 import useApi from "components/utils/useApi"
+import schema from "./schema"
 
 const initialValues = {
     title: "",
@@ -12,13 +16,10 @@ const initialValues = {
 
 // eslint-disable-next-line react/prop-types
 const PromotionForm = ({ id }) => {
-    const [values, setValues] = useState(id ? null : initialValues)
-
     // Load Values from Server
     const [load, loadInfo] = useApi({
         url: `promotions/${id}`,
         method: "get",
-        onCompleted: (response) => !response.error && setValues(response.data),
     })
 
     // Save Values on Server
@@ -47,18 +48,14 @@ const PromotionForm = ({ id }) => {
         }
     }, [])
 
-    function onChange(event) {
-        const { name, value } = event.target
+    function onSubmit(formValues) {
+        const valuesToSave = {
+            ...formValues,
+            price: Number(formValues.price).toFixed(2) // Remove 0's Desnecessários
+        }
 
-        const newValue = { ...values, [name]: value }
-
-        setValues(newValue)
-    }
-
-    function onSubmit(event) {
-        event.preventDefault()
         save({
-            data: values,
+            data: valuesToSave,
             debounced: false,
         })
     }
@@ -67,6 +64,15 @@ const PromotionForm = ({ id }) => {
         event.preventDefault()
         del({ debounced: false, })
     }
+
+    const values = id ? loadInfo.data : initialValues
+
+    const fields = [
+        {name: 'title', label: "Título", type: 'text', },
+        {name: 'url', label: "Link", type: 'text', },
+        {name: 'imageUrl', label: "Imagem", type: 'text', },
+        {name: 'price', label: "Preço", type: 'number', },
+    ]
 
     return (
         <div>
@@ -80,45 +86,30 @@ const PromotionForm = ({ id }) => {
                         : (<h2>Houve Um Erro na Requisição do Item</h2>)
                 )
                 : (
-                    <form onSubmit={onSubmit}>
-                        {saveInfo.loading && <span>Salvando Dados...</span>}
-                        <div className="promotion-form__group">
-                            <label htmlFor='title'>Titulo</label>
-                            <input id='title' name='title' type='text' onChange={onChange} value={values?.title} />
-                        </div>
+                    <Formik
+                        initialValues={values}
+                        validationSchema={schema}
+                        onSubmit={onSubmit}
+                    >
+                        {()=> (
+                            <Form>
+                                {saveInfo.loading && <span>Salvando Dados...</span>}
+                                
+                                {fields.map(field => (
+                                    <Field {...field} key="" />
+                                ))}
 
-                        <div className="promotion-form__group">
-                            <label htmlFor='url'>Link</label>
-                            <input id='url' name='url' type='text' onChange={onChange} value={values?.url} />
-                        </div>
-
-                        <div className="promotion-form__group">
-                            <label htmlFor='imageUrl'>Imagem</label>
-                            <input id='imageUrl' name='imageUrl' type='text' onChange={onChange} value={values?.imageUrl} />
-                        </div>
-
-                        <div className="promotion-form__group">
-                            <label htmlFor='price'>Preço</label>
-                            <input id='price' name='price' type='number' onChange={onChange} value={values?.price} />
-                        </div>
-
-                        <div className="promotion-form__group">
-                            <button type='submit'>Salvar</button>
-                            <button onClick={() => history.push('/')}>Cancelar</button>
-                        </div>
-
-                        <div className="promotion-form__group">
-                        </div>
-
-                        {
-                            id
-                                ?
                                 <div className="promotion-form__group">
-                                    <button onClick={deletePromo}>Apagar promoção</button>
+                                    <button type='submit'>Salvar</button>
+                                    <button onClick={() => history.push('/')}>Cancelar</button>
+                                {
+                                    id && <button onClick={deletePromo}>Apagar promoção</button>
+                                }
                                 </div>
-                                : ""
-                        }
-                    </form>
+
+                            </Form>
+                        )}
+                    </Formik>
                 )
             }
         </div>
