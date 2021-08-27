@@ -4,27 +4,10 @@
     margin-bottom: 15px;
 }
 
-.promotion-form__group label{
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-}
-
-.promotion-form__group input{
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    background-color: #fff;
-    height: 36px;
-    padding: 0 10px;
-}
-
-
-.promotion-form__group button{
+.promotion-form__group button {
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #aaa;
     height: 36px;
     padding: 10px;
 }
-
