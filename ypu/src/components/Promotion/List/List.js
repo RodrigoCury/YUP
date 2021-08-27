@@ -12,7 +12,7 @@ const PromotionList = ({ error, loading, promotions }) => {
         return <div>Algo de Errado, não está certo</div>
     }
 
-    if (!loading || promotions === null) {
+    if (promotions === null) {
         return <div>Carregando...</div>
     }
 
@@ -29,7 +29,9 @@ const PromotionList = ({ error, loading, promotions }) => {
                     key={p.id}
                 />
             })}
-
+            {!loading && (
+                <div>Carregando Mais promoções...</div>
+            )}
             {promotionId && (
                 <PromotionModal
                     promotionId={promotionId}

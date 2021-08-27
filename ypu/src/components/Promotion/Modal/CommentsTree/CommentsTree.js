@@ -72,7 +72,7 @@ const PromotionModalCommentsTree = ({ comments, sendComment }) => {
                         } 
                     </button>
 
-                    {isCommentBoxVisible ===item.id &&(
+                    {isCommentBoxVisible === item.id &&(
                         <div className = 'promotion-modal-comments-tree__comment-box' >
                             <textarea value={comment} onChange={(ev) => {setComment(ev.target.value)}}/>
                             <button 
@@ -89,7 +89,7 @@ const PromotionModalCommentsTree = ({ comments, sendComment }) => {
                         </div>
                     )}
 
-                    {item.children && renderList(item)}
+                    {item.children && renderList(item.children)}
 
                 </div>
             </li>
@@ -97,11 +97,14 @@ const PromotionModalCommentsTree = ({ comments, sendComment }) => {
     }
 
     function renderList(list) {
-        return (
-            <ul className='promotion-modal-comments-tree'>
-                {list.map(renderItem)}
-            </ul>
-        )
+        if (list) {
+            return (
+                <ul className='promotion-modal-comments-tree'>
+                    {list.map(renderItem)}
+                </ul>
+            )
+        }
+        return ""
     }
 
     
