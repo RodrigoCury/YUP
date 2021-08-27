@@ -1,0 +1,54 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-field input {
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 36px;
+    padding: 0 10px;
+}
+
+.form-field__input-has-error {
+    border-color: #c0392b !important;
+}
+
+.form-field__error-message {
+    align-self: flex-start;
+    padding: 2px 0;
+    border-radius: 4px;
+    color: #c0392b;
+    font-size: 13px;
+    animation: fade-in-error 1.5s;
+    -moz-animation: fade-in-error 1.5s;
+    -webkit-animation: fade-in-error 1.5s;
+    -o-animation: fade-in-error 1.5s;
+
+}
+
+@keyframes fade-in-error {
+    0% {
+        background-color: transparent;
+        color: #c0392b;
+    }
+
+    50% {
+        background-color: #c0392b;
+        color: white
+    }
+
+    100% {
+        background-color: transparent;
+        color: #c0392b;
+    }
+}
