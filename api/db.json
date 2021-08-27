@@ -73,8 +73,8 @@
     {
       "id": 11,
       "title": "Kit Notebook Acer Aspire 3 + Mochila Green, A315-41-R790, AMD Ryzen 3 2200U Dual Core",
-      "price": 1799,
-      "url": "",
+      "price": "1799.00",
+      "url": "https://www.google.com/aclk?sa=l&ai=DChcSEwjV16HHurLyAhWWD5EKHcjMBSIYABAFGgJjZQ&ae=2&ei=4rsYYe_5JYbd1sQPqNmlmAk&sig=AOD64_1v4v_1VzD3UIBZMA8pqF0CuqAD6A&ctype=5&q=&sqi=2&ved=2ahUKEwjv8prHurLyAhWGrpUCHahsCZMQ9aACegQIARBI&adurl=",
       "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem_url/2631517face1861bc4f46ae154d387de.png"
     },
     {
@@ -102,14 +102,14 @@
       "title": "SS Pets AM244 Almofada Pet 45x45cm Gato",
       "url": "https://amzn.to/2SQim8Y",
       "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem_url/90f453a4f161839db7d1d5da3182fd52.jpg",
-      "price": "25",
+      "price": "25.00",
       "id": 15
     },
     {
       "id": 16,
       "title": "Kit Notebook Acer Aspire 3 + Mochila Green, A315-41-R790, AMD Ryzen 3 2200U Dual Core",
-      "price": 1799,
-      "url": "",
+      "price": "1799.00",
+      "url": "https://www.google.com/aclk?sa=l&ai=DChcSEwjV16HHurLyAhWWD5EKHcjMBSIYABAFGgJjZQ&ae=2&ei=4rsYYe_5JYbd1sQPqNmlmAk&sig=AOD64_1v4v_1VzD3UIBZMA8pqF0CuqAD6A&ctype=5&q=&sqi=2&ved=2ahUKEwjv8prHurLyAhWGrpUCHahsCZMQ9aACegQIARBI&adurl=",
       "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem_url/2631517face1861bc4f46ae154d387de.png"
     },
     {
@@ -137,8 +137,22 @@
       "title": "SS Pets AM244 Almofada Pet 45x45cm Gato",
       "url": "https://amzn.to/2SQim8Y",
       "imageUrl": "https://cdn.gatry.com/gatry-static/promocao/imagem_url/90f453a4f161839db7d1d5da3182fd52.jpg",
-      "price": "25",
+      "price": "25.00",
       "id": 20
+    },
+    {
+      "title": "OlokinhoMeu",
+      "price": "1.00",
+      "url": "https://www.google.com/aclk?sa=l&ai=DChcSEwjV16HHurLyAhWWD5EKHcjMBSIYABAFGgJjZQ&ae=2&ei=4rsYYe_5JYbd1sQPqNmlmAk&sig=AOD64_1v4v_1VzD3UIBZMA8pqF0CuqAD6A&ctype=5&q=&sqi=2&ved=2ahUKEwjv8prHurLyAhWGrpUCHahsCZMQ9aACegQIARBI&adurl=",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRSrLnHWrw7F2imr3FIhVKXb5jn5GN3gJDtaNZEi7JLKQPMfF9pd4mGdRk3X2fIp_sVVHP6Tfc9nks&usqp=CAc",
+      "id": 22
+    },
+    {
+      "title": "AirFryer",
+      "price": "124124122.99",
+      "url": "https://www.google.com/aclk?sa=l&ai=DChcSEwjV16HHurLyAhWWD5EKHcjMBSIYABAFGgJjZQ&ae=2&ei=4rsYYe_5JYbd1sQPqNmlmAk&sig=AOD64_1v4v_1VzD3UIBZMA8pqF0CuqAD6A&ctype=5&q=&sqi=2&ved=2ahUKEwjv8prHurLyAhWGrpUCHahsCZMQ9aACegQIARBI&adurl=",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRSrLnHWrw7F2imr3FIhVKXb5jn5GN3gJDtaNZEi7JLKQPMfF9pd4mGdRk3X2fIp_sVVHP6Tfc9nks&usqp=CAc",
+      "id": 23
     }
   ],
   "comments": [
