@@ -3,11 +3,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-}
-
-.promotion-search__header h1 {
-    text-transform: uppercase;
-    color: #888;
+    text-decoration: none;
 }
 
 .promotion-search__input {
@@ -19,4 +15,10 @@
     display: flex;
     padding: 0 10px;
     font-size: 18px;
+}
+
+.promotion-search__title {
+    text-transform: uppercase;
+    color: #888;
+    font-size: 40px;
 }

@@ -77,7 +77,6 @@ const PromotionForm = ({ id }) => {
 
     return (
         <div>
-            <h1>Promo Show</h1>
             <h2>{id ? "Editar Promoção" : "Nova promoção"}</h2>
 
             {!values

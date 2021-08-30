@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import useApi from 'components/utils/useApi'
 import UIInfiniteScroll from 'components/UI/InfiniteSroll/InfiniteSroll'
 import './Search.css'
 
-import UIButton from 'components/UI/UIButton/Button'
 import PromotionList from '../List/List'
 
 const baseParams = {
@@ -64,10 +62,6 @@ const PromotionSearch = () => {
 
     return (
         <div className='promotion-search'>
-            <header className='promotion-search__header'>
-                <h1>Promo Show</h1>
-                <UIButton component={Link} theme="contained-green" to="/create">Nova Promoção</UIButton>
-            </header>
             <input
                 className='promotion-search__input'
                 type='search'
