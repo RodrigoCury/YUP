@@ -49,6 +49,8 @@ export default function useApi(config) {
                 newRequestInfo.total = parseInt(response.headers["x-total-count"], 10)
             }
 
+            console.log(newRequestInfo)
+
             setRequestInfo(finalConfig.updateRequestInfo(newRequestInfo, requestInfo));
 
         } catch (error) {

@@ -14,6 +14,7 @@ const PromotionModal = ({ promotionId, onClickClose }) => {
             order: 'desc',
             _expand: "user",
         },
+        onComplete: (data) => console.log(data),
         method: 'get',
     })
 

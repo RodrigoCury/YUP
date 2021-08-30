@@ -4,10 +4,6 @@
     margin-bottom: 15px;
 }
 
-.promotion-form__group button {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #aaa;
-    height: 36px;
-    padding: 10px;
+.promotion-form__button {
+    margin-right: 10px;
 }
