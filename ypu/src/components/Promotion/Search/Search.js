@@ -4,6 +4,7 @@ import useApi from 'components/utils/useApi'
 import UIInfiniteScroll from 'components/UI/InfiniteSroll/InfiniteSroll'
 import './Search.css'
 
+import UIButton from 'components/UI/UIButton/Button'
 import PromotionList from '../List/List'
 
 const baseParams = {
@@ -11,7 +12,6 @@ const baseParams = {
     _order: "desc",
     _sort: "id",
     _limit: 4,
-
 }
 
 const PromotionSearch = () => {
@@ -66,7 +66,7 @@ const PromotionSearch = () => {
         <div className='promotion-search'>
             <header className='promotion-search__header'>
                 <h1>Promo Show</h1>
-                <Link className='promotion-card__link' to="/create">Nova Promoção</Link>
+                <UIButton component={Link} theme="contained-green" to="/create">Nova Promoção</UIButton>
             </header>
             <input
                 className='promotion-search__input'
@@ -82,7 +82,7 @@ const PromotionSearch = () => {
             />
             {loadInfo.data && 
              !loadInfo.loading &&
-             loadInfo.data?.length < loadInfo.total && 
+             loadInfo.data?.length < loadInfo.total &&  
                 <UIInfiniteScroll fetchMore={fetchMore} />
             }
         </div>

@@ -6,6 +6,7 @@ import { Formik, Form, } from "formik"
 import './Form.css'
 import useApi from "components/utils/useApi"
 import schema from "./schema"
+import UIButton from "components/UI/UIButton/Button"
 
 const initialValues = {
     title: "",
@@ -99,13 +100,11 @@ const PromotionForm = ({ id }) => {
                                     <Field {...field} key="" />
                                 ))}
 
-                                <div className="promotion-form__group">
-                                    <button type='submit'>Salvar</button>
-                                    <button onClick={() => history.push('/')}>Cancelar</button>
-                                {
-                                    id && <button onClick={deletePromo}>Apagar promoção</button>
+                                <UIButton className="promotion-form__button" component="button" type='submit'>Salvar</UIButton>
+                                <UIButton className="promotion-form__button" component="button" onClick={() => history.push('/')}>Cancelar</UIButton>
+                                {id && 
+                                <UIButton className="promotion-form__button" theme="contained-red" component="button" onClick={deletePromo}>Apagar promoção</UIButton>
                                 }
-                                </div>
 
                             </Form>
                         )}

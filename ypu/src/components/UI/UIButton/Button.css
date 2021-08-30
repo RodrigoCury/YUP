@@ -1,0 +1,78 @@
+.ui-button {
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 10px;
+    transition: 250ms;
+    white-space: nowrap;
+    background-color: unset;
+    border: 1px solid;
+}
+
+.ui-button--bordered-blue {
+    color: #3498DB;
+    border-color: currentColor;
+}
+
+.ui-button--bordered-blue:hover {
+    color: white;
+    background-color: #3498DB;
+    border-color: white;
+}
+
+.ui-button--bordered-blue:active {
+    color: white;
+    background-color: #7db0d1;
+    border-color: white;
+}
+
+.ui-button--contained-green {
+    color: white;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.ui-button--contained-green:hover {
+    color: #2ecc71;
+    background-color: white;
+    border-color: currentColor;
+}
+
+.ui-button--contained-green:active {
+    color: white;
+    background-color: #2ecc70dc;
+    border-color: white;
+}
+
+.ui-button--contained-red {
+    color: white;
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.ui-button--contained-red:hover {
+    color: #c0392b;
+    background-color: white;
+    border-color: currentColor;
+}
+
+.ui-button--contained-red:active {
+    color: white;
+    background-color: #c03a2bd7;
+    border-color: white;
+}
+
+.ui-button--no-border-blue {
+    color: #3498DB;
+    background-color: transparent;
+    border: unset;
+}
+
+.ui-button--no-border-blue:hover {
+    color: #3498dbd5;
+    background-color: transparent;
+}
+
+.ui-button--no-border-blue:active {
+    color: #3498DB;
+    background-color: transparent;
+}
